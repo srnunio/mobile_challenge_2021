@@ -1,22 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'request_filter.dart';
+part of 'patient_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RequestFilter _$_$_RequestFilterFromJson(Map<String, dynamic> json) {
-  return _$_RequestFilter(
+_$_PatientRequest _$_$_PatientRequestFromJson(Map<String, dynamic> json) {
+  return _$_PatientRequest(
     resultSize: json['resultSize'] as int? ?? 50,
-    genre: json['genre'] as String? ?? '',
+    page: json['page'] as int? ?? 1,
+    gender: json['gender'] as String? ?? '',
     nationality: json['nationality'] as String? ?? '',
   );
 }
 
-Map<String, dynamic> _$_$_RequestFilterToJson(_$_RequestFilter instance) =>
+Map<String, dynamic> _$_$_PatientRequestToJson(_$_PatientRequest instance) =>
     <String, dynamic>{
       'resultSize': instance.resultSize,
-      'genre': instance.genre,
+      'page': instance.page,
+      'gender': instance.gender,
       'nationality': instance.nationality,
     };
