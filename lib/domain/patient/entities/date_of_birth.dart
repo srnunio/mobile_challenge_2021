@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:mobile_challenge_2021/utils/date_time_util.dart';
 
 part 'date_of_birth.freezed.dart';
 
@@ -11,4 +12,8 @@ class DateOfBirth with _$DateOfBirth {
 
   factory DateOfBirth.fromJson(Map<String, dynamic> json) =>
       _$DateOfBirthFromJson(json);
+}
+
+extension DateOfBirthEx on DateOfBirth {
+  String get date => DateTime.parse(date).formatDate();
 }
