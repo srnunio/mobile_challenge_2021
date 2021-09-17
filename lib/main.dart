@@ -6,8 +6,8 @@ import 'package:mobile_challenge_2021/utils/util.dart';
 
 import 'I18n/l18n.dart';
 import 'domain/core/i_navigation_service.dart';
-import 'infrasctructure/core/client/dio_builder.dart';
-import 'infrasctructure/core/client/endpoints.dart';
+import 'infrastructure/core/client/dio_builder.dart';
+import 'infrastructure/core/client/endpoints.dart';
 import 'injection/injection.dart';
 import 'injection/injection_config.dart';
 
