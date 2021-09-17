@@ -28,5 +28,5 @@ class Street with _$Street {
 }
 
 extension AddressEx on Address {
-  String get fullAddress => '$country • $city • ${street.name}';
+  String get fullAddress => '$country • $city';
 }
