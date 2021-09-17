@@ -1,14 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/src/dio.dart';
-import 'package:mobile_challenge_2021/domain/core/i_api_service.dart';
-import 'package:mobile_challenge_2021/domain/core/i_network_info.dart';
 import 'package:mobile_challenge_2021/domain/core/request/patient_request.dart';
 import 'package:mobile_challenge_2021/domain/core/request/request_failure.dart';
 import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
 
-abstract class IPatientRepository extends IApiService {
-  IPatientRepository(Dio dio)
-      : super(dio);
+abstract class IPatientRepository {
+  final Dio dio;
+
+  IPatientRepository(this.dio);
 
   /// read all patients
   /// return Right(List<Patient>) when tha cal successful
