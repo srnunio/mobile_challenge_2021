@@ -26,3 +26,7 @@ class Street with _$Street {
 
   factory Street.fromJson(Map<String, dynamic> json) => _$StreetFromJson(json);
 }
+
+extension AddressEx on Address {
+  String get fullAddress => '$country • $city • ${street.name}';
+}
