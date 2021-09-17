@@ -2,7 +2,7 @@ import 'package:mobile_challenge_2021/application/core/base_view_model.dart';
 import 'package:mobile_challenge_2021/domain/core/request/patient_request.dart';
 import 'package:mobile_challenge_2021/domain/core/request/request_failure.dart';
 import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
-import 'package:mobile_challenge_2021/infrastructure/patient/patient_service.dart';
+import 'package:mobile_challenge_2021/domain/patient/i_patient_service.dart';
 import 'package:mobx/mobx.dart';
 
 part 'patients_view_model.g.dart';
@@ -10,7 +10,7 @@ part 'patients_view_model.g.dart';
 class PatientsViewModel = _PatientsViewModel with _$PatientsViewModel;
 
 abstract class _PatientsViewModel extends BaseViewModel with Store {
-  final PatientService _service;
+  final IPatientService _service;
 
   _PatientsViewModel(this._service);
 

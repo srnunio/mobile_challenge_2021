@@ -36,7 +36,7 @@ class InjectorConfig {
 
   void registerViewModels() {
     _injector.registerFactory(
-        () => PatientsViewModel(_injector.get<PatientService>()));
+        () => PatientsViewModel(_injector.get<IPatientService>()));
   }
 
   void registerRepositories() {
