@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mobile_challenge_2021/domain/patient/entities/address.dart';
 
 import 'date_of_birth.dart';
+import 'name.dart';
 
 part 'patient.freezed.dart';
 
@@ -11,7 +12,7 @@ part 'patient.g.dart';
 class Patient with _$Patient {
   const factory Patient(
       {required String id,
-      required String name,
+      required Name name,
       required String gender,
       required String email,
       required String phone,
