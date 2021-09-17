@@ -14,6 +14,4 @@ abstract class INavigationService {
   Future<dynamic> navigateToPushNamedAndRemoveUntil(String routeName);
 
   Future<dynamic> navigateToPop({Object? object});
-
-  Future<dynamic> navigatePush({required Widget page});
 }
