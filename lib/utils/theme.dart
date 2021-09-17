@@ -36,7 +36,7 @@ class CustomTheme {
       scaffoldBackgroundColor: kPlaceholderColor,
       dialogBackgroundColor: kPlaceholderColor,
       fontFamily: fontName,
-      cardColor: kBackgroundColor, 
+      cardColor: kBackgroundColor,
     );
     return _themeData;
   }
