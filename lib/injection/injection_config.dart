@@ -28,15 +28,15 @@ class InjectorConfig {
     final registerModule = InjectorModule();
 
     _injector.registerLazySingleton<INavigationService>(
-            () => NavigationService(registerModule.key));
+        () => NavigationService(registerModule.key));
 
     _injector.registerFactory<IPatientService>(
-            () => PatientService(_injector.get<PatientRepository>()));
+        () => PatientService(_injector.get<PatientRepository>()));
   }
 
   void registerViewModels() {
-    _injector.registerFactory(() =>
-        PatientsViewModel(_injector.get<PatientService>()));
+    _injector.registerFactory(
+        () => PatientsViewModel(_injector.get<PatientService>()));
   }
 
   void registerRepositories() {
