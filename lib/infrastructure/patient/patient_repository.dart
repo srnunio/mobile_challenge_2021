@@ -28,7 +28,7 @@ class PatientRepository extends IPatientRepository {
             },
           ));
 
-      var data = (response.data as Map<String, dynamic>)['data']['results'];
+      var data = (response.data as Map<String, dynamic>)['results'];
 
       return Right(PatientMapper.fromList(data));
     } on DioError catch (error) {
