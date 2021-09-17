@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
-import 'package:customized/customized.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_challenge_2021/domain/core/i_navigation_service.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
