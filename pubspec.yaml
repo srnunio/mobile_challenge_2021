@@ -34,6 +34,7 @@ dependencies:
 
   #Network
   dio: ^4.0.0
+  connectivity: ^3.0.6
 
   # Misc
   dartz: ^0.10.0-nullsafety.1
