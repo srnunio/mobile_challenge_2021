@@ -25,7 +25,7 @@ class _$AddressTearOff {
       required String city,
       required String state,
       required String country,
-      required int postcode}) {
+      required String postcode}) {
     return _Address(
       street: street,
       city: city,
@@ -49,7 +49,7 @@ mixin _$Address {
   String get city => throw _privateConstructorUsedError;
   String get state => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
-  int get postcode => throw _privateConstructorUsedError;
+  String get postcode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -61,7 +61,11 @@ abstract class $AddressCopyWith<$Res> {
   factory $AddressCopyWith(Address value, $Res Function(Address) then) =
       _$AddressCopyWithImpl<$Res>;
   $Res call(
-      {Street street, String city, String state, String country, int postcode});
+      {Street street,
+      String city,
+      String state,
+      String country,
+      String postcode});
 
   $StreetCopyWith<$Res> get street;
 }
@@ -102,7 +106,7 @@ class _$AddressCopyWithImpl<$Res> implements $AddressCopyWith<$Res> {
       postcode: postcode == freezed
           ? _value.postcode
           : postcode // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 
@@ -120,7 +124,11 @@ abstract class _$AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
       __$AddressCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Street street, String city, String state, String country, int postcode});
+      {Street street,
+      String city,
+      String state,
+      String country,
+      String postcode});
 
   @override
   $StreetCopyWith<$Res> get street;
@@ -163,7 +171,7 @@ class __$AddressCopyWithImpl<$Res> extends _$AddressCopyWithImpl<$Res>
       postcode: postcode == freezed
           ? _value.postcode
           : postcode // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -190,7 +198,7 @@ class _$_Address implements _Address {
   @override
   final String country;
   @override
-  final int postcode;
+  final String postcode;
 
   @override
   String toString() {
@@ -241,7 +249,7 @@ abstract class _Address implements Address {
       required String city,
       required String state,
       required String country,
-      required int postcode}) = _$_Address;
+      required String postcode}) = _$_Address;
 
   factory _Address.fromJson(Map<String, dynamic> json) = _$_Address.fromJson;
 
@@ -254,7 +262,7 @@ abstract class _Address implements Address {
   @override
   String get country => throw _privateConstructorUsedError;
   @override
-  int get postcode => throw _privateConstructorUsedError;
+  String get postcode => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$AddressCopyWith<_Address> get copyWith =>
@@ -269,7 +277,7 @@ Street _$StreetFromJson(Map<String, dynamic> json) {
 class _$StreetTearOff {
   const _$StreetTearOff();
 
-  _Street call({required String number, required String name}) {
+  _Street call({required int number, required String name}) {
     return _Street(
       number: number,
       name: name,
@@ -286,7 +294,7 @@ const $Street = _$StreetTearOff();
 
 /// @nodoc
 mixin _$Street {
-  String get number => throw _privateConstructorUsedError;
+  int get number => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -298,7 +306,7 @@ mixin _$Street {
 abstract class $StreetCopyWith<$Res> {
   factory $StreetCopyWith(Street value, $Res Function(Street) then) =
       _$StreetCopyWithImpl<$Res>;
-  $Res call({String number, String name});
+  $Res call({int number, String name});
 }
 
 /// @nodoc
@@ -318,7 +326,7 @@ class _$StreetCopyWithImpl<$Res> implements $StreetCopyWith<$Res> {
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -332,7 +340,7 @@ abstract class _$StreetCopyWith<$Res> implements $StreetCopyWith<$Res> {
   factory _$StreetCopyWith(_Street value, $Res Function(_Street) then) =
       __$StreetCopyWithImpl<$Res>;
   @override
-  $Res call({String number, String name});
+  $Res call({int number, String name});
 }
 
 /// @nodoc
@@ -353,7 +361,7 @@ class __$StreetCopyWithImpl<$Res> extends _$StreetCopyWithImpl<$Res>
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -371,7 +379,7 @@ class _$_Street implements _Street {
       _$_$_StreetFromJson(json);
 
   @override
-  final String number;
+  final int number;
   @override
   final String name;
 
@@ -408,13 +416,13 @@ class _$_Street implements _Street {
 }
 
 abstract class _Street implements Street {
-  const factory _Street({required String number, required String name}) =
+  const factory _Street({required int number, required String name}) =
       _$_Street;
 
   factory _Street.fromJson(Map<String, dynamic> json) = _$_Street.fromJson;
 
   @override
-  String get number => throw _privateConstructorUsedError;
+  int get number => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

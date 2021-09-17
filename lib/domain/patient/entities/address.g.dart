@@ -12,7 +12,7 @@ _$_Address _$_$_AddressFromJson(Map<String, dynamic> json) {
     city: json['city'] as String,
     state: json['state'] as String,
     country: json['country'] as String,
-    postcode: json['postcode'] as int,
+    postcode: json['postcode'] as String,
   );
 }
 
@@ -27,7 +27,7 @@ Map<String, dynamic> _$_$_AddressToJson(_$_Address instance) =>
 
 _$_Street _$_$_StreetFromJson(Map<String, dynamic> json) {
   return _$_Street(
-    number: json['number'] as String,
+    number: json['number'] as int,
     name: json['name'] as String,
   );
 }

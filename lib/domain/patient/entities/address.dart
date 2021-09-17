@@ -11,7 +11,7 @@ class Address with _$Address {
       required String city,
       required String state,
       required String country,
-      required int postcode}) = _Address;
+      required String postcode}) = _Address;
 
   factory Address.fromJson(Map<String, dynamic> json) =>
       _$AddressFromJson(json);
@@ -20,7 +20,7 @@ class Address with _$Address {
 @freezed
 class Street with _$Street {
   const factory Street({
-    required String number,
+    required int number,
     required String name,
   }) = _Street;
 
