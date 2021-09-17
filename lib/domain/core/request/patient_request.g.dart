@@ -9,7 +9,7 @@ part of 'patient_request.dart';
 _$_PatientRequest _$_$_PatientRequestFromJson(Map<String, dynamic> json) {
   return _$_PatientRequest(
     resultSize: json['resultSize'] as int? ?? 50,
-    page: json['page'] as int? ?? 1,
+    page: json['page'] as int? ?? 0,
     gender: json['gender'] as String? ?? '',
     nationality: json['nationality'] as String? ?? '',
   );

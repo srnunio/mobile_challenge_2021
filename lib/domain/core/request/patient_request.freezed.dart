@@ -22,7 +22,7 @@ class _$PatientRequestTearOff {
 
   _PatientRequest call(
       {int resultSize = 50,
-      int page = 1,
+      int page = 0,
       String gender = '',
       String nationality = ''}) {
     return _PatientRequest(
@@ -153,7 +153,7 @@ class __$PatientRequestCopyWithImpl<$Res>
 class _$_PatientRequest implements _PatientRequest {
   const _$_PatientRequest(
       {this.resultSize = 50,
-      this.page = 1,
+      this.page = 0,
       this.gender = '',
       this.nationality = ''});
 
@@ -163,7 +163,7 @@ class _$_PatientRequest implements _PatientRequest {
   @JsonKey(defaultValue: 50)
   @override
   final int resultSize;
-  @JsonKey(defaultValue: 1)
+  @JsonKey(defaultValue: 0)
   @override
   final int page;
   @JsonKey(defaultValue: '')

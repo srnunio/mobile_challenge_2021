@@ -8,10 +8,14 @@ part 'patient_request.g.dart';
 class PatientRequest with _$PatientRequest {
   const factory PatientRequest(
       {@Default(50) int resultSize,
-      @Default(1) int page,
+      @Default(0) int page,
       @Default('') String gender,
       @Default('') String nationality}) = _PatientRequest;
 
   factory PatientRequest.fromJson(Map<String, dynamic> json) =>
       _$PatientRequestFromJson(json);
+}
+
+extension PatientRequestEx on PatientRequest {
+  bool get hasFiltered => (gender.isNotEmpty || nationality.isNotEmpty);
 }
