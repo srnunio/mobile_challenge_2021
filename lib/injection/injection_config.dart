@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobile_challenge_2021/domain/core/i_navigation_service.dart';
 import 'package:mobile_challenge_2021/infrasctructure/core/navigation_service.dart';
@@ -6,13 +7,15 @@ import 'package:mobile_challenge_2021/injection/register_module.dart';
 final _injector = GetIt.instance;
 
 class InjectorConfig {
-  InjectorConfig._() {
+  final Dio _dio;
+
+  InjectorConfig._(this._dio) {
     registerServices();
     registerRepositories();
     registerViewModels();
   }
 
-  factory InjectorConfig.init() => InjectorConfig._();
+  factory InjectorConfig.init(Dio dio) => InjectorConfig._(dio);
 
   static GetIt getInstance() => _injector;
 
