@@ -27,7 +27,6 @@ class _$PatientTearOff {
       required String email,
       required String phone,
       required String picture,
-      required String nat,
       required Address address,
       required DateOfBirth dateOfBirth,
       required String nationality}) {
@@ -38,7 +37,6 @@ class _$PatientTearOff {
       email: email,
       phone: phone,
       picture: picture,
-      nat: nat,
       address: address,
       dateOfBirth: dateOfBirth,
       nationality: nationality,
@@ -61,7 +59,6 @@ mixin _$Patient {
   String get email => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
-  String get nat => throw _privateConstructorUsedError;
   Address get address => throw _privateConstructorUsedError;
   DateOfBirth get dateOfBirth => throw _privateConstructorUsedError;
   String get nationality => throw _privateConstructorUsedError;
@@ -82,7 +79,6 @@ abstract class $PatientCopyWith<$Res> {
       String email,
       String phone,
       String picture,
-      String nat,
       Address address,
       DateOfBirth dateOfBirth,
       String nationality});
@@ -108,7 +104,6 @@ class _$PatientCopyWithImpl<$Res> implements $PatientCopyWith<$Res> {
     Object? email = freezed,
     Object? phone = freezed,
     Object? picture = freezed,
-    Object? nat = freezed,
     Object? address = freezed,
     Object? dateOfBirth = freezed,
     Object? nationality = freezed,
@@ -137,10 +132,6 @@ class _$PatientCopyWithImpl<$Res> implements $PatientCopyWith<$Res> {
       picture: picture == freezed
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
-              as String,
-      nat: nat == freezed
-          ? _value.nat
-          : nat // ignore: cast_nullable_to_non_nullable
               as String,
       address: address == freezed
           ? _value.address
@@ -191,7 +182,6 @@ abstract class _$PatientCopyWith<$Res> implements $PatientCopyWith<$Res> {
       String email,
       String phone,
       String picture,
-      String nat,
       Address address,
       DateOfBirth dateOfBirth,
       String nationality});
@@ -221,7 +211,6 @@ class __$PatientCopyWithImpl<$Res> extends _$PatientCopyWithImpl<$Res>
     Object? email = freezed,
     Object? phone = freezed,
     Object? picture = freezed,
-    Object? nat = freezed,
     Object? address = freezed,
     Object? dateOfBirth = freezed,
     Object? nationality = freezed,
@@ -251,10 +240,6 @@ class __$PatientCopyWithImpl<$Res> extends _$PatientCopyWithImpl<$Res>
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String,
-      nat: nat == freezed
-          ? _value.nat
-          : nat // ignore: cast_nullable_to_non_nullable
-              as String,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -281,7 +266,6 @@ class _$_Patient implements _Patient {
       required this.email,
       required this.phone,
       required this.picture,
-      required this.nat,
       required this.address,
       required this.dateOfBirth,
       required this.nationality});
@@ -302,8 +286,6 @@ class _$_Patient implements _Patient {
   @override
   final String picture;
   @override
-  final String nat;
-  @override
   final Address address;
   @override
   final DateOfBirth dateOfBirth;
@@ -312,7 +294,7 @@ class _$_Patient implements _Patient {
 
   @override
   String toString() {
-    return 'Patient(id: $id, name: $name, gender: $gender, email: $email, phone: $phone, picture: $picture, nat: $nat, address: $address, dateOfBirth: $dateOfBirth, nationality: $nationality)';
+    return 'Patient(id: $id, name: $name, gender: $gender, email: $email, phone: $phone, picture: $picture, address: $address, dateOfBirth: $dateOfBirth, nationality: $nationality)';
   }
 
   @override
@@ -332,8 +314,6 @@ class _$_Patient implements _Patient {
             (identical(other.picture, picture) ||
                 const DeepCollectionEquality()
                     .equals(other.picture, picture)) &&
-            (identical(other.nat, nat) ||
-                const DeepCollectionEquality().equals(other.nat, nat)) &&
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
@@ -354,7 +334,6 @@ class _$_Patient implements _Patient {
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(phone) ^
       const DeepCollectionEquality().hash(picture) ^
-      const DeepCollectionEquality().hash(nat) ^
       const DeepCollectionEquality().hash(address) ^
       const DeepCollectionEquality().hash(dateOfBirth) ^
       const DeepCollectionEquality().hash(nationality);
@@ -378,7 +357,6 @@ abstract class _Patient implements Patient {
       required String email,
       required String phone,
       required String picture,
-      required String nat,
       required Address address,
       required DateOfBirth dateOfBirth,
       required String nationality}) = _$_Patient;
@@ -397,8 +375,6 @@ abstract class _Patient implements Patient {
   String get phone => throw _privateConstructorUsedError;
   @override
   String get picture => throw _privateConstructorUsedError;
-  @override
-  String get nat => throw _privateConstructorUsedError;
   @override
   Address get address => throw _privateConstructorUsedError;
   @override

@@ -14,7 +14,6 @@ _$_Patient _$_$_PatientFromJson(Map<String, dynamic> json) {
     email: json['email'] as String,
     phone: json['phone'] as String,
     picture: json['picture'] as String,
-    nat: json['nat'] as String,
     address: Address.fromJson(json['address'] as Map<String, dynamic>),
     dateOfBirth:
         DateOfBirth.fromJson(json['dateOfBirth'] as Map<String, dynamic>),
@@ -30,7 +29,6 @@ Map<String, dynamic> _$_$_PatientToJson(_$_Patient instance) =>
       'email': instance.email,
       'phone': instance.phone,
       'picture': instance.picture,
-      'nat': instance.nat,
       'address': instance.address,
       'dateOfBirth': instance.dateOfBirth,
       'nationality': instance.nationality,

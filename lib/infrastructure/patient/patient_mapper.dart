@@ -5,11 +5,19 @@ import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
 
 class PatientMapper {
   static List<Patient> fromList(List<dynamic> data) {
-    return data.map((data) => fromData(data)).toList();
+    return data.map((item) => fromData(item)).toList();
   }
 
   static Patient fromData(Map<String, dynamic> data) {
     var idData = data['id'] as Map<String, dynamic>;
+
+    var addressData = Address(
+        street: Street.fromJson(data['location']['street']),
+        city: data['city'],
+        state: data['state'],
+        country: data['country'],
+        postcode: '${data['location']['postcode']}');
+
     return Patient(
         id: '${idData['name']}-${idData['value']}',
         name: Name.fromJson(data['name']),
@@ -17,8 +25,7 @@ class PatientMapper {
         email: data['email'],
         phone: data['phone'],
         picture: data['picture']['large'],
-        nat: data['nat'],
-        address: Address.fromJson(data['location']),
+        address: addressData,
         dateOfBirth: DateOfBirth.fromJson(data['dob']),
         nationality: data['nat']);
   }

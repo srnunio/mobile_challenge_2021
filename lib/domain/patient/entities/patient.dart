@@ -17,7 +17,6 @@ class Patient with _$Patient {
       required String email,
       required String phone,
       required String picture,
-      required String nat,
       required Address address,
       required DateOfBirth dateOfBirth,
       required String nationality}) = _Patient;

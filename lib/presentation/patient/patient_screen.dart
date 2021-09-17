@@ -30,7 +30,7 @@ class _PatientState extends State<PatientScreen>
         child: CustomProgress(),
       );
 
-    if (!_model.hasData || _model.hasError) {
+    if (!_model.hasData && _model.hasError) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

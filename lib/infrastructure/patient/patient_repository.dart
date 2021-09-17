@@ -28,14 +28,18 @@ class PatientRepository extends IPatientRepository {
             },
           ));
 
-      var data = (response.data as Map<String, dynamic>)['results'];
+      var data = (response.data['results'] as List<dynamic>);
 
-      return Right(PatientMapper.fromList(data));
+      print('data: $data');
+      var list = PatientMapper.fromList(data);
+      return Right(list);
     } on DioError catch (error) {
       if (error.error is OSError || error.error is SocketException) {
         return left(RequestFailure.networkError());
       }
-    } catch (error) {}
+    } catch (error) {
+      print('error: $error');
+    }
 
     return left(RequestFailure.serverError());
   }

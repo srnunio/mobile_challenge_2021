@@ -22,6 +22,13 @@ mixin _$PatientsViewModel on _PatientsViewModel, Store {
   bool get hasData => (_$hasDataComputed ??= Computed<bool>(() => super.hasData,
           name: '_PatientsViewModel.hasData'))
       .value;
+  Computed<bool>? _$hasFilteredComputed;
+
+  @override
+  bool get hasFiltered =>
+      (_$hasFilteredComputed ??= Computed<bool>(() => super.hasFiltered,
+              name: '_PatientsViewModel.hasFiltered'))
+          .value;
   Computed<bool>? _$hasErrorComputed;
 
   @override
@@ -119,6 +126,7 @@ mixin _$PatientsViewModel on _PatientsViewModel, Store {
     return '''
 patients: ${patients},
 hasData: ${hasData},
+hasFiltered: ${hasFiltered},
 hasError: ${hasError},
 failure: ${failure}
     ''';
