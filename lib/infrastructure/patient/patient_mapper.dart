@@ -13,9 +13,9 @@ class PatientMapper {
 
     var addressData = Address(
         street: Street.fromJson(data['location']['street']),
-        city: data['city'],
-        state: data['state'],
-        country: data['country'],
+        city: data['location']['city'],
+        state: data['location']['state'],
+        country: data['location']['country'],
         postcode: '${data['location']['postcode']}');
 
     return Patient(
