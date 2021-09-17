@@ -7,8 +7,8 @@ import 'package:mobile_challenge_2021/domain/core/request/request_failure.dart';
 import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
 
 abstract class IPatientRepository extends IApiService {
-  IPatientRepository(Dio dio, INetworkInfo networkInfo)
-      : super(dio, networkInfo);
+  IPatientRepository(Dio dio)
+      : super(dio);
 
   /// read all patients
   /// return Right(List<Patient>) when tha cal successful
