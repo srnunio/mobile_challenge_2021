@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobile_challenge_2021/application/patient/patients_view_model.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
+import 'package:mobile_challenge_2021/presentation/core/component/custom_refresh.dart';
 import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
 import 'package:mobile_challenge_2021/presentation/patient/patient_ui_item.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';
@@ -27,7 +28,7 @@ class _PatientState extends State<PatientScreen>
   }
 
   _body() {
-    if (_model.isBusy)
+    if (_model.isBusy && !_model.hasData)
       return Center(
         child: CustomProgress(),
       );
@@ -57,18 +58,23 @@ class _PatientState extends State<PatientScreen>
       );
     }
 
-    return ListView.separated(
-      separatorBuilder: (ctx,index){
-        return verticalSpaceSmall();
-      },
-      itemBuilder: (ctx, index) {
-        var patient = _model.patients[index];
-        return ItemPatientUI(
-          patient: patient,
-        );
-      },
-      itemCount: _model.patients.length,
-    );
+    return CustomRefresh(
+        child: ListView.separated(
+          separatorBuilder: (ctx, index) {
+            return verticalSpaceSmall();
+          },
+          itemBuilder: (ctx, index) {
+            var patient = _model.patients[index];
+            return ItemPatientUI(
+              patient: patient,
+            );
+          },
+          itemCount: _model.patients.length,
+        ),
+        refresh: _model.refresh,
+        onRefresh: () => _model.load(refresh: true),
+        onLoading: _model.load,
+        enablePullDown: !_model.hasFiltered);
   }
 
   @override
