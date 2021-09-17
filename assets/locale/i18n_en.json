@@ -2,5 +2,8 @@
   "app_name": "Pharma Inc",
   "no_results_found": "No results found",
   "failure": "A temporary error has occurred, please try again",
-  "network": "No internet access"
+  "network": "No internet access",
+  "try_again": "Try again",
+  "male": "Male",
+  "female": "Female"
 }
