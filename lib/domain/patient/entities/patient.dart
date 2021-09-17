@@ -24,3 +24,7 @@ class Patient with _$Patient {
   factory Patient.fromJson(Map<String, dynamic> json) =>
       _$PatientFromJson(json);
 }
+
+extension PatientEx on Patient {
+  String get fullName => '${name.title} ${name.first} ${name.last}';
+}
