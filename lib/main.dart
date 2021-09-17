@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_challenge_2021/utils/util.dart';
 
-void main() {
+import 'I18n/l18n.dart';
+import 'injection/injection_config.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await I18n.load(await Util.defaultLocale());
+  InjectorConfig.init();
   runApp(MyApp());
 }
 
