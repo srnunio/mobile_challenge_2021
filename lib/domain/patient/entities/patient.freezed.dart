@@ -22,7 +22,7 @@ class _$PatientTearOff {
 
   _Patient call(
       {required String id,
-      required String name,
+      required Name name,
       required String gender,
       required String email,
       required String phone,
@@ -56,7 +56,7 @@ const $Patient = _$PatientTearOff();
 /// @nodoc
 mixin _$Patient {
   String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  Name get name => throw _privateConstructorUsedError;
   String get gender => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
@@ -77,7 +77,7 @@ abstract class $PatientCopyWith<$Res> {
       _$PatientCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      String name,
+      Name name,
       String gender,
       String email,
       String phone,
@@ -87,6 +87,7 @@ abstract class $PatientCopyWith<$Res> {
       DateOfBirth dateOfBirth,
       String nationality});
 
+  $NameCopyWith<$Res> get name;
   $AddressCopyWith<$Res> get address;
   $DateOfBirthCopyWith<$Res> get dateOfBirth;
 }
@@ -120,7 +121,7 @@ class _$PatientCopyWithImpl<$Res> implements $PatientCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Name,
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -157,6 +158,13 @@ class _$PatientCopyWithImpl<$Res> implements $PatientCopyWith<$Res> {
   }
 
   @override
+  $NameCopyWith<$Res> get name {
+    return $NameCopyWith<$Res>(_value.name, (value) {
+      return _then(_value.copyWith(name: value));
+    });
+  }
+
+  @override
   $AddressCopyWith<$Res> get address {
     return $AddressCopyWith<$Res>(_value.address, (value) {
       return _then(_value.copyWith(address: value));
@@ -178,7 +186,7 @@ abstract class _$PatientCopyWith<$Res> implements $PatientCopyWith<$Res> {
   @override
   $Res call(
       {String id,
-      String name,
+      Name name,
       String gender,
       String email,
       String phone,
@@ -188,6 +196,8 @@ abstract class _$PatientCopyWith<$Res> implements $PatientCopyWith<$Res> {
       DateOfBirth dateOfBirth,
       String nationality});
 
+  @override
+  $NameCopyWith<$Res> get name;
   @override
   $AddressCopyWith<$Res> get address;
   @override
@@ -224,7 +234,7 @@ class __$PatientCopyWithImpl<$Res> extends _$PatientCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Name,
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
@@ -282,7 +292,7 @@ class _$_Patient implements _Patient {
   @override
   final String id;
   @override
-  final String name;
+  final Name name;
   @override
   final String gender;
   @override
@@ -363,7 +373,7 @@ class _$_Patient implements _Patient {
 abstract class _Patient implements Patient {
   const factory _Patient(
       {required String id,
-      required String name,
+      required Name name,
       required String gender,
       required String email,
       required String phone,
@@ -378,7 +388,7 @@ abstract class _Patient implements Patient {
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  String get name => throw _privateConstructorUsedError;
+  Name get name => throw _privateConstructorUsedError;
   @override
   String get gender => throw _privateConstructorUsedError;
   @override

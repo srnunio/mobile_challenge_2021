@@ -9,7 +9,7 @@ part of 'patient.dart';
 _$_Patient _$_$_PatientFromJson(Map<String, dynamic> json) {
   return _$_Patient(
     id: json['id'] as String,
-    name: json['name'] as String,
+    name: Name.fromJson(json['name'] as Map<String, dynamic>),
     gender: json['gender'] as String,
     email: json['email'] as String,
     phone: json['phone'] as String,
