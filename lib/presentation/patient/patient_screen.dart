@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobile_challenge_2021/application/patient/patients_view_model.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
+import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
+import 'package:mobile_challenge_2021/presentation/patient/patient_ui_item.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';
 
 class PatientScreen extends StatefulWidget {
@@ -55,14 +57,14 @@ class _PatientState extends State<PatientScreen>
       );
     }
 
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (ctx,index){
+        return verticalSpaceSmall();
+      },
       itemBuilder: (ctx, index) {
         var patient = _model.patients[index];
-        return Container(
-          child: Txt(
-            patient.name.first,
-            textAlign: TextAlign.center,
-          ),
+        return ItemPatientUI(
+          patient: patient,
         );
       },
       itemCount: _model.patients.length,

@@ -15,5 +15,5 @@ class DateOfBirth with _$DateOfBirth {
 }
 
 extension DateOfBirthEx on DateOfBirth {
-  String get date => DateTime.parse(date).formatDate();
+  String get dateTime => DateTime.parse(date).formatDate();
 }
