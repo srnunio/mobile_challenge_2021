@@ -1,6 +1,10 @@
 import 'dart:async';
+import 'dart:ui';
 import 'package:customized/customized.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_challenge_2021/domain/core/i_navigation_service.dart';
+import 'package:mobile_challenge_2021/injection/injection.dart';
+import 'package:mobile_challenge_2021/presentation/patient/patient_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   static const route = '/';
@@ -11,6 +15,8 @@ class SplashScreen extends StatefulWidget {
 
 class _InitializedState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
+  INavigationService _navigation = inject<INavigationService>();
+
   @override
   void initState() {
     super.initState();
@@ -21,10 +27,17 @@ class _InitializedState extends State<SplashScreen>
     Timer(Duration(seconds: 1), onDoneLoading);
   }
 
-  onDoneLoading() {}
+  onDoneLoading() {
+    _navigation.navigateToPushNamedAndRemoveUntil(PatientScreen.route);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: empty);
+    return Scaffold(
+        body: Center(
+      child: Container(
+        child: Image.asset('assets/image/logo.png'),
+      ),
+    ));
   }
 }
