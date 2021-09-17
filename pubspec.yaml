@@ -27,6 +27,7 @@ dependencies:
 
   # Dependency Injection
   get_it: ^7.1.2
+  injectable:
 
   # State management
   mobx: ^2.0.1
