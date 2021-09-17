@@ -71,5 +71,5 @@ flutter:
         - asset: assets/fonts/Nunito-Regular.ttf
   assets:
     - assets/icons/
-    - assets/images/
+    - assets/image/
     - assets/locale/
