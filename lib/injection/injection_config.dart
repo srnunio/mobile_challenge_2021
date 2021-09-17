@@ -31,7 +31,7 @@ class InjectorConfig {
         () => NavigationService(registerModule.key));
 
     _injector.registerFactory<IPatientService>(
-        () => PatientService(_injector.get<PatientRepository>()));
+        () => PatientService(_injector.get<IPatientRepository>()));
   }
 
   void registerViewModels() {
