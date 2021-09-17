@@ -1,4 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:mobile_challenge_2021/domain/patient/entities/address.dart';
+
+import 'date_of_birth.dart';
 
 part 'patient.freezed.dart';
 
@@ -14,8 +17,8 @@ class Patient with _$Patient {
       required String phone,
       required String picture,
       required String nat,
-      required String address,
-      required String dateOfBirth,
+      required Address address,
+      required DateOfBirth dateOfBirth,
       required String nationality}) = _Patient;
 
   factory Patient.fromJson(Map<String, dynamic> json) =>

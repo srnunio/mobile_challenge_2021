@@ -28,8 +28,8 @@ class _$PatientTearOff {
       required String phone,
       required String picture,
       required String nat,
-      required String address,
-      required String dateOfBirth,
+      required Address address,
+      required DateOfBirth dateOfBirth,
       required String nationality}) {
     return _Patient(
       id: id,
@@ -62,8 +62,8 @@ mixin _$Patient {
   String get phone => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
   String get nat => throw _privateConstructorUsedError;
-  String get address => throw _privateConstructorUsedError;
-  String get dateOfBirth => throw _privateConstructorUsedError;
+  Address get address => throw _privateConstructorUsedError;
+  DateOfBirth get dateOfBirth => throw _privateConstructorUsedError;
   String get nationality => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -83,9 +83,12 @@ abstract class $PatientCopyWith<$Res> {
       String phone,
       String picture,
       String nat,
-      String address,
-      String dateOfBirth,
+      Address address,
+      DateOfBirth dateOfBirth,
       String nationality});
+
+  $AddressCopyWith<$Res> get address;
+  $DateOfBirthCopyWith<$Res> get dateOfBirth;
 }
 
 /// @nodoc
@@ -141,16 +144,30 @@ class _$PatientCopyWithImpl<$Res> implements $PatientCopyWith<$Res> {
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Address,
       dateOfBirth: dateOfBirth == freezed
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateOfBirth,
       nationality: nationality == freezed
           ? _value.nationality
           : nationality // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+
+  @override
+  $AddressCopyWith<$Res> get address {
+    return $AddressCopyWith<$Res>(_value.address, (value) {
+      return _then(_value.copyWith(address: value));
+    });
+  }
+
+  @override
+  $DateOfBirthCopyWith<$Res> get dateOfBirth {
+    return $DateOfBirthCopyWith<$Res>(_value.dateOfBirth, (value) {
+      return _then(_value.copyWith(dateOfBirth: value));
+    });
   }
 }
 
@@ -167,9 +184,14 @@ abstract class _$PatientCopyWith<$Res> implements $PatientCopyWith<$Res> {
       String phone,
       String picture,
       String nat,
-      String address,
-      String dateOfBirth,
+      Address address,
+      DateOfBirth dateOfBirth,
       String nationality});
+
+  @override
+  $AddressCopyWith<$Res> get address;
+  @override
+  $DateOfBirthCopyWith<$Res> get dateOfBirth;
 }
 
 /// @nodoc
@@ -226,11 +248,11 @@ class __$PatientCopyWithImpl<$Res> extends _$PatientCopyWithImpl<$Res>
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Address,
       dateOfBirth: dateOfBirth == freezed
           ? _value.dateOfBirth
           : dateOfBirth // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateOfBirth,
       nationality: nationality == freezed
           ? _value.nationality
           : nationality // ignore: cast_nullable_to_non_nullable
@@ -272,9 +294,9 @@ class _$_Patient implements _Patient {
   @override
   final String nat;
   @override
-  final String address;
+  final Address address;
   @override
-  final String dateOfBirth;
+  final DateOfBirth dateOfBirth;
   @override
   final String nationality;
 
@@ -347,8 +369,8 @@ abstract class _Patient implements Patient {
       required String phone,
       required String picture,
       required String nat,
-      required String address,
-      required String dateOfBirth,
+      required Address address,
+      required DateOfBirth dateOfBirth,
       required String nationality}) = _$_Patient;
 
   factory _Patient.fromJson(Map<String, dynamic> json) = _$_Patient.fromJson;
@@ -368,9 +390,9 @@ abstract class _Patient implements Patient {
   @override
   String get nat => throw _privateConstructorUsedError;
   @override
-  String get address => throw _privateConstructorUsedError;
+  Address get address => throw _privateConstructorUsedError;
   @override
-  String get dateOfBirth => throw _privateConstructorUsedError;
+  DateOfBirth get dateOfBirth => throw _privateConstructorUsedError;
   @override
   String get nationality => throw _privateConstructorUsedError;
   @override

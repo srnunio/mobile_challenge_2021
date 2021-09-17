@@ -15,8 +15,9 @@ _$_Patient _$_$_PatientFromJson(Map<String, dynamic> json) {
     phone: json['phone'] as String,
     picture: json['picture'] as String,
     nat: json['nat'] as String,
-    address: json['address'] as String,
-    dateOfBirth: json['dateOfBirth'] as String,
+    address: Address.fromJson(json['address'] as Map<String, dynamic>),
+    dateOfBirth:
+        DateOfBirth.fromJson(json['dateOfBirth'] as Map<String, dynamic>),
     nationality: json['nationality'] as String,
   );
 }
