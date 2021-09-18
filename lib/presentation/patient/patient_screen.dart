@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobile_challenge_2021/application/patient/patients_view_model.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
+import 'package:mobile_challenge_2021/presentation/body_search_ui.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/custom_refresh.dart';
 import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
 import 'package:mobile_challenge_2021/presentation/core/styles.dart';
@@ -98,6 +99,13 @@ class _PatientState extends State<PatientScreen>
               'app_name'.translate,
               textStyle: (_) =>
                   styleText(fontWeight: FontWeight.bold, size: 24.0),
+            ),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(55.0),
+              child: BodySearchUI(
+                onSearch: (){},
+                isBusy: _model.isBusy,
+              ),
             ),
           ),
           body: _body());
