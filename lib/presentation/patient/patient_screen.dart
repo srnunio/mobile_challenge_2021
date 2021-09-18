@@ -80,7 +80,10 @@ class _PatientState extends State<PatientScreen>
             return ItemPatientUI(
               patient: patient,
               onTap: (item) {
-                _model.navigatePush(page: DetailsPatientScreen(item));
+                defaultBottomSheet(
+                    child: DetailsPatientScreen(item), context: context);
+
+                // _model.navigatePush(page: DetailsPatientScreen(item));
               },
             );
           },
