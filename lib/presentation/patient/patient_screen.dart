@@ -87,8 +87,7 @@ class _PatientState extends State<PatientScreen>
         ),
         refresh: _model.refresh,
         onRefresh: () => _model.load(refresh: true),
-        onLoading: _model.load,
-        enablePullDown: !_model.hasFiltered);
+        onLoading: _model.load);
   }
 
   _onFilter() async {
