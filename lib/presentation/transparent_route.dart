@@ -4,8 +4,7 @@ class TransparentRoute<T> extends PageRoute<T> {
   TransparentRoute({
     required this.builder,
     RouteSettings? routeSettings,
-  })  :
-        super(settings: routeSettings, fullscreenDialog: false);
+  }) : super(settings: routeSettings, fullscreenDialog: false);
 
   final WidgetBuilder builder;
 
@@ -32,7 +31,6 @@ class TransparentRoute<T> extends PageRoute<T> {
       opacity: Tween<double>(begin: 0, end: 1).animate(animation),
       child: Semantics(
         scopesRoute: true,
-
         explicitChildNodes: true,
         child: widget,
       ),

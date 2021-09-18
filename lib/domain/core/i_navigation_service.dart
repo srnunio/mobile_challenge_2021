@@ -18,4 +18,7 @@ abstract class INavigationService {
 
   /// call Navigator.pop [navigateToPop]
   Future<dynamic> navigateToPop({Object? object});
+
+  /// call Navigator.push [navigatePush]
+  Future<dynamic> navigatePush({required Widget page});
 }
