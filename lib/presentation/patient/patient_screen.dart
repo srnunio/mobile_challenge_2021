@@ -39,27 +39,31 @@ class _PatientState extends State<PatientScreen>
       );
 
     if (!_model.hasData && _model.hasError) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          Icon(
-            Icons.info_outline,
-            size: 55.0,
-          ),
-          Txt(
-            messageFailure(),
-            textAlign: TextAlign.center,
-          ),
-          InkWell(
-            onTap: _model.load,
-            child: Txt(
-              'try_again',
+      return Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Icon(
+              Icons.info_outline,
+              size: 55.0,
+            ),
+            Txt(
+              messageFailure(),
               textAlign: TextAlign.center,
             ),
-          ),
-        ],
+            InkWell(
+              onTap: _model.load,
+              child: Txt(
+                'try_again'.translate,
+                textAlign: TextAlign.center,
+                textStyle: (_) => _.copyWith(
+                    fontWeight: FontWeight.bold, color: kPrimaryColor2),
+              ),
+            ),
+          ],
+        ),
       );
     }
 
