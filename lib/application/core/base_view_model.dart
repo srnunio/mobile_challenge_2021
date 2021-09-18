@@ -59,4 +59,8 @@ abstract class _BaseViewModel with Store {
     return await _navigationService
         .navigateToPushNamedAndRemoveUntil(routeName);
   }
+
+  Future<dynamic> navigatePush({required Widget page}) async {
+    return await _navigationService.navigatePush(page: page);
+  }
 }
