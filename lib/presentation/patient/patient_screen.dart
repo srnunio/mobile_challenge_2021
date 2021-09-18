@@ -2,6 +2,7 @@ import 'package:customized/customized.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobile_challenge_2021/application/patient/patients_view_model.dart';
+import 'package:mobile_challenge_2021/domain/core/request/patient_request.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
 import 'package:mobile_challenge_2021/presentation/body_search_ui.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/custom_refresh.dart';
@@ -113,7 +114,7 @@ class _PatientState extends State<PatientScreen>
     _model.load(refresh: true);
   }
 
-  _onClear(){
+  _onClear() {
     _model.onClear();
   }
 
@@ -143,6 +144,7 @@ class _PatientState extends State<PatientScreen>
                 onSearch: _onSearch,
                 onClear: _onClear,
                 isBusy: _model.isBusy,
+                hasFiltered: _model.request.hasFiltered,
                 searchValue: _model.request.nationality,
               ),
             ),

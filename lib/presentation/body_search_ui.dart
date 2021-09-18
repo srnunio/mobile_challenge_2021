@@ -16,6 +16,8 @@ class BodySearchUI extends BaseComponent {
 
   final bool isBusy;
 
+  final bool hasFiltered;
+
   final String searchValue;
 
   String _searchValue = '';
@@ -28,6 +30,7 @@ class BodySearchUI extends BaseComponent {
     required this.onFilter,
     required this.onClear,
     required this.searchValue,
+    required this.hasFiltered,
   });
 
   void _onEditingComplete() {
@@ -103,11 +106,11 @@ class BodySearchUI extends BaseComponent {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          if (searchValue.isNotEmpty) horizontalSpaceSmall(),
+          if (hasFiltered) horizontalSpaceSmall(),
           GestureDetector(
-            onTap: (isBusy) ? null : onFilter,
+            onTap: (isBusy) ? null : onClear,
             child: AnimatedContainer(
-              width: (searchValue.isEmpty) ? 0.0 : 30.0,
+              width: (hasFiltered && !isBusy) ? 30.0 : 0.0,
               duration: Duration(milliseconds: 300),
               child: Icon(
                 Icons.cancel,
