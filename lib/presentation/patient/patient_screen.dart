@@ -82,8 +82,6 @@ class _PatientState extends State<PatientScreen>
               onTap: (item) {
                 defaultBottomSheet(
                     child: DetailsPatientScreen(item), context: context);
-
-                // _model.navigatePush(page: DetailsPatientScreen(item));
               },
             );
           },

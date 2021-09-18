@@ -17,9 +17,12 @@ class PatientRepository extends IPatientRepository {
       var _genderParam =
           (request.hasFiltered) ? '&gender=${request.gender}' : '';
 
+      var _nationalityParam =
+          (request.hasFiltered) ? '&nat=${request.nationality}' : '';
+
       var _path = '/?page=${request.page}&results=${request.resultSize}';
 
-      _path += _genderParam;
+      _path += _genderParam + _nationalityParam;
 
       final response = await dio.get(_path,
           options: Options(

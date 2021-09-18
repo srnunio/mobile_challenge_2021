@@ -138,7 +138,7 @@ class _DetailsPatientState extends State<DetailsPatientScreen>
     var size = MediaQuery.of(context).size;
     var height = size.height * (3 / 4);
     return Scaffold(
-        backgroundColor: Colors.black45,
+        backgroundColor: Colors.transparent,
         body: Stack(
           alignment: Alignment.bottomCenter,
           children: [
