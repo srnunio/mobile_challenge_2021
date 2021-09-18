@@ -103,8 +103,14 @@ class _PatientState extends State<PatientScreen>
     _model.setRequest(request);
 
     _model.load(refresh: true);
+  }
 
-    print('response: $response');
+  _onSearch(String nationality) async {
+    var request = _model.request.copyWith(nationality: nationality);
+
+    _model.setRequest(request);
+
+    _model.load(refresh: true);
   }
 
   @override
@@ -130,8 +136,9 @@ class _PatientState extends State<PatientScreen>
               preferredSize: Size.fromHeight(55.0),
               child: BodySearchUI(
                 onFilter: _onFilter,
-                onSearch: (search) {},
+                onSearch: _onSearch,
                 isBusy: _model.isBusy,
+                searchValue: _model.request.nationality,
               ),
             ),
           ),

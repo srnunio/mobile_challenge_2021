@@ -8,21 +8,30 @@ import 'core/sizes.dart';
 import 'core/styles.dart';
 
 class BodySearchUI extends BaseComponent {
+
   final Function(String) onSearch;
+
   final Function() onFilter;
 
   final bool isBusy;
 
+  final String searchValue;
+
+  String _searchValue = '';
+
   FocusNode myFocusNode = FocusNode();
 
-  TextEditingController _controller = new TextEditingController();
-
-  BodySearchUI(
-      {required this.onSearch, required this.isBusy, required this.onFilter});
+  BodySearchUI({
+    required this.onSearch,
+    required this.isBusy,
+    required this.onFilter,
+    required this.searchValue,
+  });
 
   void _onEditingComplete() {
     _onTap();
-    onSearch(_controller.text);
+    if (_searchValue.isEmpty) return;
+    onSearch(_searchValue);
   }
 
   void _onTap() {
@@ -33,7 +42,7 @@ class BodySearchUI extends BaseComponent {
   }
 
   _input() {
-    var hintText = 'searching'.translate;
+    var hintText = 'filter_description'.translate;
     var color = (isBusy) ? kPlaceholderColor : kPrimaryColor2;
 
     return Container(
@@ -49,16 +58,17 @@ class BodySearchUI extends BaseComponent {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-              child: TextField(
+              child: TextFormField(
+            initialValue: searchValue,
             onTap: _onTap,
             scrollPadding: EdgeInsets.zero,
             textInputAction: TextInputAction.search,
-            controller: _controller,
             autofocus: false,
             enabled: !isBusy,
             cursorColor: kIconColor,
             focusNode: myFocusNode,
             onEditingComplete: _onEditingComplete,
+            onChanged: (value) => this._searchValue = value,
             decoration: InputDecoration(
               hintText: hintText,
               border: InputBorder.none,
@@ -91,6 +101,19 @@ class BodySearchUI extends BaseComponent {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          if (searchValue.isNotEmpty) horizontalSpaceSmall(),
+          GestureDetector(
+            onTap: (isBusy) ? null : onFilter,
+            child: AnimatedContainer(
+              width: (searchValue.isEmpty) ? 0.0 : 30.0,
+              duration: Duration(milliseconds: 300),
+              child: Icon(
+                Icons.cancel,
+                size: 30.0,
+                color: Colors.red[600],
+              ),
+            ),
+          ),
           Expanded(
               child: Container(
             height: 40.0,
