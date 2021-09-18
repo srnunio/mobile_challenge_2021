@@ -1,9 +1,13 @@
 import 'package:customized/customized.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
 
 class DetailsPatientScreen extends StatefulWidget {
   static const route = '/details_patient_screen';
+  final Patient patient;
+
+  DetailsPatientScreen(this.patient);
 
   @override
   State<StatefulWidget> createState() => _DetailsPatientState();
