@@ -12,7 +12,7 @@ Color get kPlaceholderColor => Colors.grey[100]!;
 
 const kIconColor = Color(0xff494B4C);
 
-const kTitleTextColor = Color(0xff494B4C);
+const kTitleTextColor = Colors.black;
 
 const kSubtitleTextColor = Colors.black45;
 

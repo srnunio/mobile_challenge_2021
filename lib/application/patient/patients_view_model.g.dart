@@ -9,6 +9,13 @@ part of 'patients_view_model.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$PatientsViewModel on _PatientsViewModel, Store {
+  Computed<PatientRequest>? _$requestComputed;
+
+  @override
+  PatientRequest get request =>
+      (_$requestComputed ??= Computed<PatientRequest>(() => super.request,
+              name: '_PatientsViewModel.request'))
+          .value;
   Computed<List<Patient>>? _$patientsComputed;
 
   @override
@@ -124,6 +131,7 @@ mixin _$PatientsViewModel on _PatientsViewModel, Store {
   @override
   String toString() {
     return '''
+request: ${request},
 patients: ${patients},
 hasData: ${hasData},
 hasFiltered: ${hasFiltered},

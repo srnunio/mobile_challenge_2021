@@ -7,6 +7,8 @@ import 'package:mobile_challenge_2021/presentation/body_search_ui.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/custom_refresh.dart';
 import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
 import 'package:mobile_challenge_2021/presentation/core/styles.dart';
+import 'package:mobile_challenge_2021/presentation/core/widgets.dart';
+import 'package:mobile_challenge_2021/presentation/gender_screen.dart';
 import 'package:mobile_challenge_2021/presentation/patient/details_patient_screen.dart';
 import 'package:mobile_challenge_2021/presentation/patient/patient_ui_item.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
@@ -89,6 +91,23 @@ class _PatientState extends State<PatientScreen>
         enablePullDown: !_model.hasFiltered);
   }
 
+  _onFilter() async {
+    var response = await defaultBottomSheet(
+      child: GenderScreen(),
+      context: context,
+    );
+
+    if (response == null) return;
+
+    var request = _model.request.copyWith(gender: response);
+
+    _model.setRequest(request);
+
+    _model.load(refresh: true);
+
+    print('response: $response');
+  }
+
   @override
   void initState() {
     super.initState();
@@ -111,7 +130,7 @@ class _PatientState extends State<PatientScreen>
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(55.0),
               child: BodySearchUI(
-                onFilter: () {},
+                onFilter: _onFilter,
                 onSearch: (search) {},
                 isBusy: _model.isBusy,
               ),

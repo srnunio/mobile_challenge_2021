@@ -148,7 +148,11 @@ class _DetailsPatientState extends State<DetailsPatientScreen>
                 alignment: Alignment.bottomCenter,
                 width: size.width,
                 height: height,
-                color: kBackgroundColor,
+                decoration: BoxDecoration(
+                    color: kBackgroundColor,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16.0),
+                        topRight: Radius.circular(16.0))),
                 child: Column(
                   children: [
                     Container(
@@ -161,7 +165,7 @@ class _DetailsPatientState extends State<DetailsPatientScreen>
                         onPressed: _close,
                       ),
                     ),
-                    verticalSpaceLarge(),
+                    verticalSpace(45.0),
                     Txt(
                       widget.patient.fullName,
                       textStyle: (_) =>
@@ -173,7 +177,8 @@ class _DetailsPatientState extends State<DetailsPatientScreen>
                       children: [
                         _bodyUserInformation(),
                         verticalSpaceSmall(),
-                        _bodyAddress()
+                        _bodyAddress(),
+                        verticalSpaceSmall(),
                       ],
                     ))
                   ],

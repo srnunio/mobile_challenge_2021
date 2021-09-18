@@ -23,6 +23,10 @@ abstract class _PatientsViewModel extends BaseViewModel with Store {
   @observable
   RequestFailure? _failure;
 
+  /// notify change request
+  @computed
+  PatientRequest get request => _request;
+
   /// data
   @computed
   List<Patient> get patients => _patients.toList();

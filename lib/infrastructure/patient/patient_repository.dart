@@ -20,13 +20,13 @@ class PatientRepository extends IPatientRepository {
 
       _path += _genderParam;
 
+      print('_path: $_path');
+
       final response = await dio.get(_path,
-          options: Options(
-            headers: {
+          options: Options(headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json',
-            },
-          ));
+            },));
 
       var data = (response.data['results'] as List<dynamic>);
 
