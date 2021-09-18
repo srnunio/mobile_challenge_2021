@@ -7,7 +7,8 @@ import 'core/sizes.dart';
 import 'core/styles.dart';
 
 class BodySearchUI extends BaseComponent {
-  final VoidCallback onSearch;
+  final Function(String) onSearch;
+
   final bool isBusy;
 
   FocusNode myFocusNode = FocusNode();
@@ -32,7 +33,7 @@ class BodySearchUI extends BaseComponent {
             decoration:
                 decoration(color: kBackgroundColor, borderRadius: kBorder),
             child: TextField(
-              onTap: onSearch,
+              onTap: (){},
               scrollPadding: EdgeInsets.zero,
               textInputAction: TextInputAction.search,
               controller: _controller,
@@ -40,7 +41,7 @@ class BodySearchUI extends BaseComponent {
               enabled: !isBusy,
               cursorColor: kIconColor,
               focusNode: myFocusNode,
-              onEditingComplete: onSearch,
+              onEditingComplete: () => onSearch(_controller.text),
               decoration: InputDecoration(
                 hintText: hintText,
                 border: InputBorder.none,

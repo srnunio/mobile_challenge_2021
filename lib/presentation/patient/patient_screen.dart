@@ -103,7 +103,7 @@ class _PatientState extends State<PatientScreen>
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(55.0),
               child: BodySearchUI(
-                onSearch: (){},
+                onSearch: (search){},
                 isBusy: _model.isBusy,
               ),
             ),
