@@ -81,6 +81,7 @@ abstract class _PatientsViewModel extends BaseViewModel with Store {
     onRefresh(value: false);
 
     response.fold((error) => this._failure = error, (data) {
+      if (refresh) this._patients = ObservableList.of([]);
       _save(data);
       setRequest(request);
     });

@@ -14,32 +14,31 @@ class PatientRepository extends IPatientRepository {
   Future<Either<RequestFailure, List<Patient>>> getPatients(
       {required PatientRequest request}) async {
     try {
-      var _genderParam = '&gender=${request.gender}';
+      var _genderParam =
+          (request.hasFiltered) ? '&gender=${request.gender}' : '';
 
       var _path = '/?page=${request.page}&results=${request.resultSize}';
 
       _path += _genderParam;
 
-      print('_path: $_path');
-
       final response = await dio.get(_path,
-          options: Options(headers: {
+          options: Options(
+            headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json',
-            },));
+            },
+          ));
 
       var data = (response.data['results'] as List<dynamic>);
 
-      print('data: $data');
       var list = PatientMapper.fromList(data);
+
       return Right(list);
     } on DioError catch (error) {
       if (error.error is OSError || error.error is SocketException) {
         return left(RequestFailure.networkError());
       }
-    } catch (error) {
-      print('error: $error');
-    }
+    } catch (error) {}
 
     return left(RequestFailure.serverError());
   }
