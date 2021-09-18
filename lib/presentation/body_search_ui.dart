@@ -8,8 +8,9 @@ import 'core/sizes.dart';
 import 'core/styles.dart';
 
 class BodySearchUI extends BaseComponent {
-
   final Function(String) onSearch;
+
+  final Function() onClear;
 
   final Function() onFilter;
 
@@ -25,6 +26,7 @@ class BodySearchUI extends BaseComponent {
     required this.onSearch,
     required this.isBusy,
     required this.onFilter,
+    required this.onClear,
     required this.searchValue,
   });
 

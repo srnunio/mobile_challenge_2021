@@ -86,4 +86,12 @@ abstract class _PatientsViewModel extends BaseViewModel with Store {
       setRequest(request);
     });
   }
+
+  /// clear filter
+  @action
+  void onClear() {
+    setRequest(PatientRequest());
+    this._patients = ObservableList.of([]);
+    load();
+  }
 }

@@ -129,6 +129,17 @@ mixin _$PatientsViewModel on _PatientsViewModel, Store {
   }
 
   @override
+  void onClear() {
+    final _$actionInfo = _$_PatientsViewModelActionController.startAction(
+        name: '_PatientsViewModel.onClear');
+    try {
+      return super.onClear();
+    } finally {
+      _$_PatientsViewModelActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 request: ${request},

@@ -113,6 +113,10 @@ class _PatientState extends State<PatientScreen>
     _model.load(refresh: true);
   }
 
+  _onClear(){
+    _model.onClear();
+  }
+
   @override
   void initState() {
     super.initState();
@@ -137,6 +141,7 @@ class _PatientState extends State<PatientScreen>
               child: BodySearchUI(
                 onFilter: _onFilter,
                 onSearch: _onSearch,
+                onClear: _onClear,
                 isBusy: _model.isBusy,
                 searchValue: _model.request.nationality,
               ),
