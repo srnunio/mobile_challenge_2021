@@ -90,7 +90,7 @@ abstract class _PatientsViewModel extends BaseViewModel with Store {
   /// clear filter
   @action
   void onClear() {
-    setRequest(PatientRequest());
+    this._request = PatientRequest();
     this._patients = ObservableList.of([]);
     load();
   }
