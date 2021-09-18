@@ -9,6 +9,7 @@ import 'core/styles.dart';
 
 class BodySearchUI extends BaseComponent {
   final Function(String) onSearch;
+  final Function() onFilter;
 
   final bool isBusy;
 
@@ -16,17 +17,32 @@ class BodySearchUI extends BaseComponent {
 
   TextEditingController _controller = new TextEditingController();
 
-  BodySearchUI({required this.onSearch, required this.isBusy});
+  BodySearchUI(
+      {required this.onSearch, required this.isBusy, required this.onFilter});
+
+  void _onEditingComplete() {
+    _onTap();
+    onSearch(_controller.text);
+  }
+
+  void _onTap() {
+    if (myFocusNode.hasFocus)
+      myFocusNode.unfocus();
+    else
+      myFocusNode.requestFocus();
+  }
 
   _input() {
     var hintText = 'searching'.translate;
+    var color = (isBusy) ? kPlaceholderColor : kPrimaryColor2;
+
     return Container(
       height: 40.0,
       padding: EdgeInsets.only(left: 10.0, right: 10.0),
       decoration: decoration(
           color: kBackgroundColor,
           borderRadius: kBorder,
-          border: Border.all(color: kPrimaryColor2, width: 2.0)),
+          border: Border.all(color: color, width: 2.0)),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.end,
@@ -34,7 +50,7 @@ class BodySearchUI extends BaseComponent {
         children: [
           Expanded(
               child: TextField(
-            onTap: () {},
+            onTap: _onTap,
             scrollPadding: EdgeInsets.zero,
             textInputAction: TextInputAction.search,
             controller: _controller,
@@ -42,7 +58,7 @@ class BodySearchUI extends BaseComponent {
             enabled: !isBusy,
             cursorColor: kIconColor,
             focusNode: myFocusNode,
-            onEditingComplete: () => onSearch(_controller.text),
+            onEditingComplete: _onEditingComplete,
             decoration: InputDecoration(
               hintText: hintText,
               border: InputBorder.none,
@@ -57,7 +73,7 @@ class BodySearchUI extends BaseComponent {
             child: Center(
               child: CustomIcon(
                 iconName: 'search',
-                color: kPrimaryColor2,
+                color: color,
               ),
             ),
           )
@@ -93,13 +109,14 @@ class BodySearchUI extends BaseComponent {
           )),
           horizontalSpaceSmall(),
           GestureDetector(
+            onTap: (isBusy) ? null : onFilter,
             child: Container(
               width: kSizeIcon,
               height: kSizeIcon,
               child: Center(
                 child: CustomIcon(
                   iconName: 'filter-filled-tool-symbol',
-                  color: kPrimaryColor2,
+                  color: (isBusy) ? kPlaceholderColor : kPrimaryColor2,
                 ),
               ),
             ),
