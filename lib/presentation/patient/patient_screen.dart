@@ -7,6 +7,7 @@ import 'package:mobile_challenge_2021/presentation/body_search_ui.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/custom_refresh.dart';
 import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
 import 'package:mobile_challenge_2021/presentation/core/styles.dart';
+import 'package:mobile_challenge_2021/presentation/patient/details_patient_screen.dart';
 import 'package:mobile_challenge_2021/presentation/patient/patient_ui_item.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';
@@ -71,6 +72,9 @@ class _PatientState extends State<PatientScreen>
             var patient = _model.patients[index];
             return ItemPatientUI(
               patient: patient,
+              onTap: (item) {
+                _model.navigatePush(page: DetailsPatientScreen(item));
+              },
             );
           },
           itemCount: _model.patients.length,
