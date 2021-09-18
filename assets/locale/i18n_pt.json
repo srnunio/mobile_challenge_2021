@@ -18,5 +18,6 @@
   "phone": "Telefone",
   "date_of_birth": "Data de nascimento",
   "nationality": "Nacionalidade",
-  "id": "Número de identificação"
+  "id": "Número de identificação",
+  "filter_description": "Filtrar por nacionalidade.Ex:(AU, BR, ES, FR)"
 }
