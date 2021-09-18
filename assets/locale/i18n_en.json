@@ -6,5 +6,10 @@
   "try_again": "Try again",
   "male": "Male",
   "female": "Female",
-  "searching": "Search"
+  "searching": "Search",
+  "street": "Street",
+  "city": "City",
+  "state": "State",
+  "country": "Country",
+  "postcode": "Post code"
 }
