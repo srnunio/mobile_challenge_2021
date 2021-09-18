@@ -4,11 +4,19 @@
   "failure": "Ocorreu um erro temporário , por favor tenta novamente",
   "network": "Sem acesso a internet",
   "try_again": "Tentar novamente",
+  "searching": "Pesquisar",
   "male": "Macho",
   "female": "Fêmea",
   "street": "Rua",
   "city": "Cidade",
   "state": "Estado",
   "country": "País",
-  "postcode": "Código postal"
+  "postcode": "Código postal",
+  "name": "Nome",
+  "email": "Email",
+  "gender": "Gênero",
+  "phone": "Telefone",
+  "date_of_birth": "Data de nascimento",
+  "nationality": "Nacionalidade",
+  "id": "Número de identificação"
 }

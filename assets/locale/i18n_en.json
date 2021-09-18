@@ -11,5 +11,12 @@
   "city": "City",
   "state": "State",
   "country": "Country",
-  "postcode": "Post code"
+  "postcode": "Post code",
+  "name": "Name",
+  "email": "Email",
+  "gender": "Gender",
+  "phone": "Phone",
+  "date_of_birth": "Date of birth",
+  "nationality": "Nationality",
+  "id": "Identification number"
 }

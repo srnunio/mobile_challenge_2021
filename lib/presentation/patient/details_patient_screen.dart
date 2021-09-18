@@ -1,12 +1,14 @@
 import 'package:customized/customized.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_challenge_2021/domain/core/i_navigation_service.dart';
+import 'package:mobile_challenge_2021/domain/patient/entities/date_of_birth.dart';
 import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/image/remote_image.dart';
 import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
 import 'package:mobile_challenge_2021/presentation/core/styles.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
+import 'package:mobile_challenge_2021/utils/strings_util.dart';
 
 class DetailsPatientScreen extends StatefulWidget {
   static const route = '/details_patient_screen';
@@ -21,6 +23,108 @@ class DetailsPatientScreen extends StatefulWidget {
 class _DetailsPatientState extends State<DetailsPatientScreen>
     with SingleTickerProviderStateMixin {
   var navigation = inject<INavigationService>();
+
+  _bodyHorizontalInfo({required String title, required String value}) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Expanded(
+            child: Txt(
+          title,
+        )),
+        Txt(
+          value,
+          textStyle: (_) =>
+              _.copyWith(color: kPrimaryColor2, fontWeight: FontWeight.bold),
+        )
+      ],
+    );
+  }
+
+  _bodyUserInformation() {
+    var patient = widget.patient;
+    var boxDecoration = decoration(
+        border: Border.all(color: kPrimaryColor2, width: 2.0),
+        borderRadius: kBorder);
+
+    return Container(
+      decoration: boxDecoration,
+      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _bodyHorizontalInfo(title: 'id'.translate, value: patient.id),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(title: 'email'.translate, value: patient.email),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(
+              title: 'gender'.translate, value: patient.gender.translate),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(title: 'phone'.translate, value: patient.phone),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(
+              title: 'nationality'.translate, value: patient.nationality),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(
+              title: 'date_of_birth'.translate,
+              value: patient.dateOfBirth.dateTime),
+        ],
+      ),
+    );
+  }
+
+  _bodyAddress() {
+    var address = widget.patient.address;
+    var boxDecoration = decoration(
+        border: Border.all(color: kPrimaryColor2, width: 2.0),
+        borderRadius: kBorder);
+
+    return Container(
+      decoration: boxDecoration,
+      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _bodyHorizontalInfo(
+              title: 'country'.translate, value: address.country),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(title: 'city'.translate, value: address.city),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(title: 'state'.translate, value: address.state),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(
+              title: 'street'.translate, value: address.street.name),
+          Divider(
+            color: kPrimaryColor2,
+          ),
+          _bodyHorizontalInfo(
+              title: 'postcode'.translate, value: address.postcode),
+        ],
+      ),
+    );
+  }
 
   void _close() => navigation.navigateToPop();
 
@@ -64,16 +168,14 @@ class _DetailsPatientState extends State<DetailsPatientScreen>
                           styleText(fontWeight: FontWeight.bold, size: 28.0),
                       textAlign: TextAlign.center,
                     ),
-                    Txt(
-                      widget.patient.email,
-                      textAlign: TextAlign.center,
-                    ),
-                    Txt(
-                      widget.patient.phone,
-                      textAlign: TextAlign.center,
-                      textStyle: (_) =>
-                          styleText(fontWeight: FontWeight.bold,color: kPrimaryColor3),
-                    ),
+                    Expanded(
+                        child: ListView(
+                      children: [
+                        _bodyUserInformation(),
+                        verticalSpaceSmall(),
+                        _bodyAddress()
+                      ],
+                    ))
                   ],
                 ),
               ),
