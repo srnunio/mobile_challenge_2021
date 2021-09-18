@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 const kTextTitleSize = 16.0;
 const kTextSubtitleSize = 14.0;
-const kSizeIcon = 24.0;
+const kSizeIcon = 20.0;
 const double kBorder = 8.0;
 const double _VerticalSpaceSmall = 10.0;
 const double _VerticalSpaceMedium = 20.0;
