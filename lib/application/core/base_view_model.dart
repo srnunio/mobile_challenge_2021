@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:mobile_challenge_2021/infrastructure/core/navigation_service.dart';
+import 'package:mobile_challenge_2021/domain/core/i_navigation_service.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
 import 'package:mobx/mobx.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 part 'base_view_model.g.dart';
 
-var _navigationService = inject<NavigationService>();
+var _navigationService = inject<INavigationService>();
 
 class BaseViewModel = _BaseViewModel with _$BaseViewModel;
 
