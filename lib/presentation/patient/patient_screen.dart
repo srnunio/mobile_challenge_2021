@@ -128,6 +128,7 @@ class _PatientState extends State<PatientScreen>
   @override
   Widget build(BuildContext context) {
     return Observer(builder: (_) {
+      print(_model.request.nationality);
       return Scaffold(
           appBar: AppBar(
             brightness: CustomTheme.brightness,

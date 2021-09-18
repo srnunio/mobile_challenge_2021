@@ -64,7 +64,7 @@ class BodySearchUI extends BaseComponent {
         children: [
           Expanded(
               child: TextFormField(
-            initialValue: (hasFiltered) ? searchValue : null,
+            initialValue: searchValue,
             onTap: _onTap,
             scrollPadding: EdgeInsets.zero,
             textInputAction: TextInputAction.search,
