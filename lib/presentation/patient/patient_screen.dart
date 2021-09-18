@@ -5,8 +5,11 @@ import 'package:mobile_challenge_2021/application/patient/patients_view_model.da
 import 'package:mobile_challenge_2021/injection/injection.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/custom_refresh.dart';
 import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
+import 'package:mobile_challenge_2021/presentation/core/styles.dart';
 import 'package:mobile_challenge_2021/presentation/patient/patient_ui_item.dart';
+import 'package:mobile_challenge_2021/utils/colors.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';
+import 'package:mobile_challenge_2021/utils/theme.dart';
 
 class PatientScreen extends StatefulWidget {
   static const route = '/patient_screen';
@@ -86,7 +89,18 @@ class _PatientState extends State<PatientScreen>
   @override
   Widget build(BuildContext context) {
     return Observer(builder: (_) {
-      return Scaffold(body: _body());
+      return Scaffold(
+          appBar: AppBar(
+            brightness: CustomTheme.brightness,
+            backgroundColor: kBackgroundColor,
+            elevation: 0.0,
+            title: Txt(
+              'app_name'.translate,
+              textStyle: (_) =>
+                  styleText(fontWeight: FontWeight.bold, size: 24.0),
+            ),
+          ),
+          body: _body());
     });
   }
 }
