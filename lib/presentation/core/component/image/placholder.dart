@@ -1,8 +1,6 @@
 import 'package:customized/customized.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
-
-import '../../sizes.dart';
 import '../../styles.dart';
 import 'custom_image.dart';
 

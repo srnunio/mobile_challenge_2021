@@ -1,9 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:customized/customized.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/image/placholder.dart';
-
 import '../../styles.dart';
 import 'custom_image.dart';
 
@@ -12,8 +10,6 @@ class RemoteImage extends CustomImage {
     required String urlImage,
     double? height,
     double? borderRadius,
-    BoxShape shape = BoxShape.rectangle,
-    bool isBorder = false,
     double? width,
   }) : super(
           urlImage: urlImage,

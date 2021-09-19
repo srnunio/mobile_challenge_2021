@@ -9,10 +9,9 @@ class CustomIcon extends BaseComponent {
   double? size;
 
   Color? color;
-  final bool defaultActive;
 
   CustomIcon(
-      {this.size, this.color, String? iconName, this.defaultActive = false})
+      {this.size, this.color, String? iconName})
       : assert(iconName != null && iconName.isNotEmpty),
         super(value: iconName);
 
@@ -20,7 +19,6 @@ class CustomIcon extends BaseComponent {
   Widget build(BuildContext context) {
     size = size ?? kSizeIcon;
     color = color ?? kIconColor;
-    color = (defaultActive) ? null : color;
     return Center(
       child: SvgPicture.asset(
         'assets/icons/$value.svg',
