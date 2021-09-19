@@ -11,7 +11,7 @@ import 'package:mobile_challenge_2021/utils/colors.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';
 
 class DetailsPatientScreen extends StatefulWidget {
-  static const route = '/details_patient_screen';
+
   final Patient patient;
 
   DetailsPatientScreen(this.patient);
