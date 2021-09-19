@@ -4,7 +4,7 @@ import 'package:mobile_challenge_2021/utils/colors.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/base_component.dart';
 
-import 'core/sizes.dart';
+import '../utils/sizes.dart';
 import 'core/styles.dart';
 
 class BodySearchUI extends BaseComponent {

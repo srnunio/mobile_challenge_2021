@@ -6,7 +6,7 @@ import 'package:mobile_challenge_2021/domain/core/request/patient_request.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
 import 'package:mobile_challenge_2021/presentation/body_search_ui.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/custom_refresh.dart';
-import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
+import 'package:mobile_challenge_2021/utils/sizes.dart';
 import 'package:mobile_challenge_2021/presentation/core/styles.dart';
 import 'package:mobile_challenge_2021/presentation/core/widgets.dart';
 import 'package:mobile_challenge_2021/presentation/gender_screen.dart';

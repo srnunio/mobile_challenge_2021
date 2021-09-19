@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
 
-import '../sizes.dart';
+import '../../../utils/sizes.dart';
 import 'base_component.dart';
 
 class CustomIcon extends BaseComponent {

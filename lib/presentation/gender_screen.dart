@@ -5,7 +5,7 @@ import 'package:mobile_challenge_2021/injection/injection.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';
 
-import 'core/sizes.dart';
+import '../utils/sizes.dart';
 import 'core/styles.dart';
 
 class GenderScreen extends StatefulWidget {

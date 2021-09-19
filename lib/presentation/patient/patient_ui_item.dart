@@ -5,7 +5,7 @@ import 'package:mobile_challenge_2021/domain/patient/entities/address.dart';
 import 'package:mobile_challenge_2021/domain/patient/entities/date_of_birth.dart';
 import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
 import 'package:mobile_challenge_2021/presentation/core/component/image/remote_image.dart';
-import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
+import 'package:mobile_challenge_2021/utils/sizes.dart';
 import 'package:mobile_challenge_2021/presentation/core/styles.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_challenge_2021/presentation/core/sizes.dart';
+import 'package:mobile_challenge_2021/utils/sizes.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
 
 String get fontName => 'Font';
