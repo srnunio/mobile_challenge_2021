@@ -14,11 +14,12 @@ class PatientRepository extends IPatientRepository {
   Future<Either<RequestFailure, List<Patient>>> getPatients(
       {required PatientRequest request}) async {
     try {
-      var _genderParam =
-          (request.hasFiltered) ? '&gender=${request.gender}' : '';
+      var hasFiltered = request.hasFiltered;
+
+      var _genderParam = (hasFiltered) ? '&gender=${request.gender}' : '';
 
       var _nationalityParam =
-          (request.hasFiltered) ? '&nat=${request.nationality}' : '';
+          (hasFiltered) ? '&nat=${request.nationality}' : '';
 
       var _path = '/?page=${request.page}&results=${request.resultSize}';
 
