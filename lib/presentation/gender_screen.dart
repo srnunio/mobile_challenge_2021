@@ -1,7 +1,6 @@
 import 'package:customized/customized.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_challenge_2021/domain/core/i_navigation_service.dart';
-import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
 import 'package:mobile_challenge_2021/injection/injection.dart';
 import 'package:mobile_challenge_2021/utils/colors.dart';
 import 'package:mobile_challenge_2021/utils/strings_util.dart';
@@ -19,8 +18,6 @@ class GenderScreen extends StatefulWidget {
 class _GenderScreenState extends State<GenderScreen>
     with SingleTickerProviderStateMixin {
   var navigation = inject<INavigationService>();
-
-  void _close() => navigation.navigateToPop();
 
   _bodyTitle({required String title, required VoidCallback onTap}) {
     var boxDecoration = decoration(

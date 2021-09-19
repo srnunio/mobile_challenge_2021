@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_challenge_2021/domain/patient/entities/patient.dart';
-import 'package:mobile_challenge_2021/presentation/patient/details_patient_screen.dart';
 import 'package:mobile_challenge_2021/presentation/patient/patient_screen.dart';
 import 'package:mobile_challenge_2021/presentation/splash_screen.dart';
 
@@ -26,10 +24,6 @@ abstract class CustomRouter {
         return AnimationRouterPager(builder: (_) => SplashScreen());
       case PatientScreen.route:
         return AnimationRouterPager(builder: (_) => PatientScreen());
-      case DetailsPatientScreen.route:
-        var patient = (settings.arguments as Patient);
-        return AnimationRouterPager(
-            builder: (_) => DetailsPatientScreen(patient));
       default:
         return AnimationRouterPager(builder: (_) => SplashScreen());
     }
