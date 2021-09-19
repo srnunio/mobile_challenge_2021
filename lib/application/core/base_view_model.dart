@@ -39,12 +39,6 @@ abstract class _BaseViewModel with Store {
     }
   }
 
-  Future<dynamic> replaceRouteName(String routeName,
-      {Object? arguments}) async {
-    return await _navigationService.replaceRouteName(routeName,
-        arguments: arguments);
-  }
-
   Future<dynamic> navigateToPushNamed(String routeName,
       {Object? arguments}) async {
     return await _navigationService.navigateToPushNamed(routeName,
@@ -58,9 +52,5 @@ abstract class _BaseViewModel with Store {
   Future<dynamic> navigateToPushNamedAndRemoveUntil(String routeName) async {
     return await _navigationService
         .navigateToPushNamedAndRemoveUntil(routeName);
-  }
-
-  Future<dynamic> navigatePush({required Widget page}) async {
-    return await _navigationService.navigatePush(page: page);
   }
 }
