@@ -10,15 +10,9 @@ abstract class INavigationService {
   /// call Navigator.pushNamed [navigateToPushNamed]
   Future<dynamic> navigateToPushNamed(String routeName, {Object? arguments});
 
-  /// call Navigator.pushReplacementNamed [replaceRouteName]
-  Future<dynamic> replaceRouteName(String routeName, {Object? arguments});
-
   /// call Navigator.pushNamedAndRemoveUntil [navigateToPushNamedAndRemoveUntil]
   Future<dynamic> navigateToPushNamedAndRemoveUntil(String routeName);
 
   /// call Navigator.pop [navigateToPop]
   Future<dynamic> navigateToPop({Object? object});
-
-  /// call Navigator.push [navigatePush]
-  Future<dynamic> navigatePush({required Widget page});
 }
