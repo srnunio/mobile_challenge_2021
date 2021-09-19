@@ -72,8 +72,8 @@ flutter doctor
 <p float="left;padding=10px">
 <img src="/screenshots/smartmockups_1.png" width="270" height="440"> 
 <img src="/screenshots/smartmockups_2.png" width="270" height="440"> 
-<img src="/screenshots/smartmockups_3.png" width="270" height="440"> 
 <img src="/screenshots/smartmockups_4.png" width="270" height="440"> 
+<img src="/screenshots/smartmockups_3.png" width="270" height="440"> 
  </p>
 
 - Dependencies
