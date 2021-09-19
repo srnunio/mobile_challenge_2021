@@ -150,7 +150,7 @@ class _PatientState extends State<PatientScreen>
               ),
             ),
           ),
-          body: _body());
+          body: SafeArea(child: _body()));
     });
   }
 }
