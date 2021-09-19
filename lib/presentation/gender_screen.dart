@@ -9,8 +9,6 @@ import 'core/sizes.dart';
 import 'core/styles.dart';
 
 class GenderScreen extends StatefulWidget {
-  static const route = '/gender_screen';
-
   @override
   State<StatefulWidget> createState() => _GenderScreenState();
 }
