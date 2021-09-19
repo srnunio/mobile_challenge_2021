@@ -69,6 +69,13 @@ flutter doctor
 
 ![image_get_color_palette](screenshots/template.png)
 
+<p float="left;padding=10px">
+<img src="/screenshots/smartmockups_1.png" width="270" height="440"> 
+<img src="/screenshots/smartmockups_2.png" width="270" height="440"> 
+<img src="/screenshots/smartmockups_3.png" width="270" height="440"> 
+<img src="/screenshots/smartmockups_4.png" width="270" height="440"> 
+ </p>
+
 - Dependencies
     * cached_network_image: ^3.1.0
     * flutter_svg: ^0.22.0
