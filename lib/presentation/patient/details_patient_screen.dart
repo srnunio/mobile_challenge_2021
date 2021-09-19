@@ -187,7 +187,7 @@ class _DetailsPatientState extends State<DetailsPatientScreen>
               ),
             ),
             Positioned(
-              top: 150.0,
+              top: 110.0,
               child: Container(
                 decoration: decoration(
                     border: Border.all(color: kBackgroundColor, width: 4.0),
