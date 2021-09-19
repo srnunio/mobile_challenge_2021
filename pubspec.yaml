@@ -15,7 +15,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   cached_network_image: ^3.1.0
   flutter_svg: ^0.22.0
-  fluttertoast: ^8.0.6
   pull_to_refresh: ^2.0.0
   customized:
     git:
@@ -35,7 +34,6 @@ dependencies:
 
   #Network
   dio: ^4.0.0
-  connectivity: ^3.0.6
 
   # Misc
   dartz: ^0.10.0-nullsafety.1
