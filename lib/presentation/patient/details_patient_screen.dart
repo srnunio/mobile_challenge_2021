@@ -165,13 +165,14 @@ class _DetailsPatientState extends State<DetailsPatientScreen>
                         onPressed: _close,
                       ),
                     ),
-                    verticalSpace(45.0),
+                    verticalSpace(30.0),
                     Txt(
                       widget.patient.fullName,
                       textStyle: (_) =>
                           styleText(fontWeight: FontWeight.bold, size: 28.0),
                       textAlign: TextAlign.center,
                     ),
+                    verticalSpaceSmall(),
                     Expanded(
                         child: ListView(
                       children: [
@@ -186,7 +187,7 @@ class _DetailsPatientState extends State<DetailsPatientScreen>
               ),
             ),
             Positioned(
-              top: 100.0,
+              top: 150.0,
               child: Container(
                 decoration: decoration(
                     border: Border.all(color: kBackgroundColor, width: 4.0),
