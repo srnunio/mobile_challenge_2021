@@ -68,6 +68,7 @@ flutter doctor
 ## Getting Started 🚀
 
 ![image_get_color_palette](screenshots/template.png)
+![image_get_color_palette](screenshots/demo.gif)
 
 <p float="left;padding=10px">
 <img src="/screenshots/smartmockups_1.png" width="270" height="440"> 
